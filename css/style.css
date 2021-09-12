@@ -57,6 +57,10 @@ body {
   height: 150px;
 }
 
+.star-color {
+  color: gold;
+}
+
 .cart {
   width: 350px;
   /* border: 1px solid green; */
