@@ -93,21 +93,24 @@ justify-content: center;
   } */
   .cart {
     width: 300px;
-    /* border: 1px solid green; */
+    border: 1px solid green;
     padding: 10px;
     box-shadow: 10px 10px 20px gray;
     border-radius: 5px;
     margin-right: 30px;
     position: fixed;
+    padding-bottom: 200px;
   }
   .cart-main {
     padding-right: 10px;
   }
+  .main {
+    margin-top: 35%;
+  }
 }
 
 @media only screen and (max-width: 468px) {
-  /* #all-products {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  } */
+  .main {
+    margin-top: 35%;
+  }
 }
