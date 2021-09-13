@@ -32,7 +32,7 @@ const showProducts = (products) => {
             </div>
           </div>
           <div class="card-footer">
-            <div class="d-flex">
+            <div style="height:"20px" class="d-flex align-items-center justify-content-center">
               <p>
                 <i class="fas fa-star star-color"></i>${product.rating.rate}
               </p>
