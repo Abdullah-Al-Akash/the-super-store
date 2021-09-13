@@ -14,22 +14,32 @@ const showProducts = (products) => {
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product">
-        <div>
-          <img class="product-image" src=${image}></img>
-        </div>
-        <h3>${product.title}</h3>
-        <p>Category: ${product.category}</p>
-        <h2>Price: $ ${product.price}</h2>
-        <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-        <button id="details-btn" class="btn btn-danger">Details</button>
-        <div class="d-flex">
-          <p>
-            <i class="fas fa-star star-color"></i>${product.rating.rate}
-          </p>
-          <p>
-            Total: ${product.rating.count}
-          </p>
+    div.innerHTML = `
+      <div class="col single-product">
+        <div class="card h-100">
+          <div class="text-center" style="height: "350px">
+            <img src="${image}" class="product-image p-3" alt="...">
+          </div>
+          <div class="card-body" style="">
+            <div class="overflow-hidden" style="height: 70px">
+              <h5 class="card-title">${product.title}</h5>              
+            </div>
+            <p>Category: ${product.category}</p>
+            <div class="pt-2 d-flex">
+              <div><button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to Cart</button></div>
+              <div class="ms-auto"><button id="details-btn" class="btn btn-danger">Details</button></div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex">
+              <p>
+                <i class="fas fa-star star-color"></i>${product.rating.rate}
+              </p>
+              <p class="ms-auto">
+                Total Star: ${product.rating.count}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
