@@ -23,7 +23,15 @@
 <body>
   <header></header>
   <main class="main container-fluid">
-    <div class="search-field">
+    <!-- Search Field Start -->
+    <div class="d-flex justify-content-center mt-5">
+      <div class="input-group mb-3 w-25">
+        <input id="input-field" type="text" class="form-control" placeholder="Search your item">
+        <button onclick="loadProducts()" class="btn btn-success" type="button">Button</button>
+      </div>
+    </div>
+    <!-- Search Field End -->
+    <!-- <div class="search-field">
       <div class="search-box">
         <input id="input-field" class="search-field" type="text" />
         <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
@@ -31,7 +39,7 @@
           Search
         </button>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7 p-5">
         <!-- Display All Products Div -->
