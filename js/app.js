@@ -30,8 +30,8 @@ const showProducts = (products) => {
             <img src="${image}" class="product-image p-3" alt="...">
           </div>
           <div class="card-body" style="">
-            <div class="overflow-hidden" style="height: 45px">
-              <h5 class="card-title">${product.title}</h5>              
+            <div class="overflow-hidden" style="height: 40px">
+              <h6 class="card-title">${product.title}</h6>              
             </div>
             <p>Category: ${product.category}</p>
             <h4>Price: $${product.price}</h4>
