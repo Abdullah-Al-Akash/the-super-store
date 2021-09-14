@@ -1,4 +1,4 @@
-#Super-Store
+# Super-Store
 <h3>Live Site: https://the-super-store.netlify.app/</h3>
 <h2>Hello!</h2>
 <h5>Today I have developed a website which's name is "Super Store".</h5>
@@ -19,12 +19,12 @@
 <br>
 <h4>Thats are two screenshot of the websites. Overall thats a user friendly I think.</h4>
 <br>
-<h2 text-center>Thats Main UI</h2>
+<h2 text-center>---Thats Main UI---</h2>
 <img src="https://i.ibb.co/BC9jXj2/Super-Store.png" alt="">
 <br>
-<h2 text-center>After Buy Now---</h2>
+<h2 text-center>---After Buy Now---</h2>
 <br>
 <img src="https://i.ibb.co/4MgwsBV/127-0-0-1-5500-index-html-7.png" alt="">
 <br>
-<h2 text-center>-------------Thank You So Much--------------</h2>
+<h2 text-center>--------Thank You So Much---------</h2>
 <br>
