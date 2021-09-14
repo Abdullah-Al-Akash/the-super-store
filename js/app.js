@@ -30,11 +30,11 @@ const showProducts = (products) => {
             <img src="${image}" class="product-image p-3" alt="...">
           </div>
           <div class="card-body" style="">
-            <div class="overflow-hidden" style="height: 50px">
+            <div class="overflow-hidden" style="height: 45px">
               <h5 class="card-title">${product.title}</h5>              
             </div>
             <p>Category: ${product.category}</p>
-            <h2>Price: $${product.price}</h2>
+            <h4>Price: $${product.price}</h4>
             <div class="pt-2 d-flex">
               <div><button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to Cart</button></div>
               <div class="ms-auto"><button id="details-btn" class="btn btn-danger">Details</button></div>
