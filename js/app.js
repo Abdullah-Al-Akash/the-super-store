@@ -1,3 +1,4 @@
+// Load Data
 const loadProducts = () => {
   // const url = `https://fakestoreapi.com/products`;
   fetch('../js/data.json')
@@ -54,9 +55,10 @@ const showProducts = (products) => {
   }
 };
 
-
+// Add to Cart Setup:
 let count = 0;
 const addToCart = (id, price) => {
+  document.getElementById('buy-now-btn').removeAttribute('disabled');
   count = count + 1;
   updatePrice("price", price);
 
@@ -65,6 +67,7 @@ const addToCart = (id, price) => {
   document.getElementById("total-Products").innerText = count;
 };
 
+// getInput Value:
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
@@ -110,21 +113,25 @@ const updateTotal = () => {
   return grandTotal;
 };
 
-// Buy Products:
+// Buy Products Function:
 const buyProducts = () => {
   const totalCost = updateTotal();
   document.getElementById("all-products").textContent = '';
   document.getElementById("thank-you-container").textContent = '';
   const div = document.createElement("div");
   const img = '../images/smile-emoji.png';
+  // Set Thanks After Click Buy Now:
   div.innerHTML = `
         <h3 class="text-center">Successfully Paid $${totalCost}</h3>
         <img src="${img}" class="img-fluid" alt="">
-        <h1 class="text-success text-center">Thank You! <br>Happy Super Shopping!</h1>
+        <h3 class="text-success text-center">Thank You! <br>Happy Super Shopping!</h3>
   `;
   document.getElementById("thank-you-container").appendChild(div);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 // Reload Function:
 const reload = () => {
   location.reload();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+// Thank You

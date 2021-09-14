@@ -1,3 +1,4 @@
+<!-- Super Store Start -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,8 +30,7 @@
       <div class="container">
         <img class="img-fluid me-2" style="width: 50px; border-radius: 25px;"
           src="images/favicon_io (2)/android-chrome-192x192.png" alt="">
-        <a class="navbar-brand text-danger" href="#">
-
+        <a class="navbar-brand text-danger" href="">
           <h3 onclick="reload()">Super Store</h3>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
             <li class="nav-item">
-              <a onclick="reload()" class="nav-link active" aria-current="page" href="#">
+              <a onclick="reload()" class="nav-link active" aria-current="page" href="">
                 <h6 class="menu-item">Home</h6>
               </a>
             </li>
@@ -65,9 +65,11 @@
     </nav>
     <!-- Search Field Start -->
     <div class="d-flex justify-content-center pt-3 bg-white">
-      <div class="input-group mb-3 w-25">
-        <input id="input-field" type="text" class="form-control" placeholder="Search your item">
-        <button onclick="" class="btn btn-success" type="button">Button</button>
+      <div id="search-field" class="input-group mb-3">
+        <input style="border-top-left-radius: 25px; border-bottom-left-radius: 25px;" id="input-field" type="text"
+          class="form-control" placeholder="Search your item">
+        <button style="border-top-right-radius: 25px; border-bottom-right-radius: 25px;" onclick=""
+          class="btn btn-success" type="button">Search</button>
       </div>
     </div>
     <hr class="mt-0">
@@ -75,14 +77,12 @@
     <!-- Navbar Complete -->
   </header>
 
+  <!-- Main Part Start -->
   <main id="main" class="main container-fluid pb-5">
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7 p-5">
         <!-- Display All Products Div -->
         <div id="all-products" class="row row-cols-1 row-cols-md-3 g-4">
-
-        </div>
-        <div id="starContainer">
 
         </div>
       </div>
@@ -132,19 +132,20 @@
             </tbody>
           </table>
           <div class="d-grid gap-2">
-            <button onclick="buyProducts()" class="btn btn-outline-success" type="button">
+            <button id="buy-now-btn" onclick="buyProducts()" class="btn btn-success" type="button" disabled>
               <h5>Buy Now</h5>
             </button>
           </div>
         </div>
       </div>
     </div>
-  </main>
-  <!-- After Click Buy Now -->
-  <div id="thank-you-container" class="d-flex justify-content-center">
+    <!-- After Click Buy Now -->
+    <div id="thank-you-container" class="d-flex justify-content-center">
 
-  </div>
+    </div>
+  </main>
   <!-- Main Part Complete -->
+
   <!-- Footer Part -->
   <footer id="footer" class="bg-dark text-white mt-5">
     <div class="container mt-5 pb-5">
@@ -166,7 +167,7 @@
           </div>
         </div>
       </div>
-      <p class="text-center">Copyright © 2021 || Book Archive</p>
+      <p class="text-center">Copyright © 2021 || Super Store</p>
     </div>
   </footer>
   <!-- Footer Part End -->
@@ -180,3 +181,4 @@
 </body>
 
 </html>
+<!-- Thank You -->
