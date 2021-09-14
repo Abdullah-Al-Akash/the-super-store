@@ -16,18 +16,17 @@ const showProducts = (products) => {
     div.classList.add("product");
 
     // Dynamically Show Star:
-    let HTML = ""; // Start the HTML string for concatenation
+    let star = ""; // Start the HTML string for concatenation
     for (let i = 0; i < 5; i++) {  // We need 5 stars
       let icoClass = i < product.rating.rate ? "fa fa-star star-color" : "fa fa-star-o"; // full or empty star
-      HTML += "<i class='" + icoClass + "'></i>"; // concatenate stars
+      star += "<i class='" + icoClass + "'></i>"; // concatenate stars
     }
 
     // Dynamically Set Every Products Cart
     div.innerHTML = `
       <div class="col single-product">
         <div class="card h-100 border border-dark">
-          <div id="starIcon"></div>
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center bg-white">
             <img src="${image}" class="product-image p-3" alt="...">
           </div>
           <div class="card-body" style="">
@@ -37,14 +36,18 @@ const showProducts = (products) => {
             <p>Category: ${product.category}</p>
             <h4>Price: $${product.price}</h4>
             <div class="pt-2 d-flex">
-              <div><button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">Add to Cart</button></div>
-              <div class="ms-auto"><button id="details-btn" class="btn btn-danger">Details</button></div>
+              <div>
+                <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success"><i class="fas fa-cart-plus"></i> Add Cart</button>
+              </div>
+              <div class="ms-auto">
+                <button onclick="singleProductDetails(${product.id})" id="details-btn" class="btn btn-danger">Details</button>
+              </div>
             </div>
           </div>
           <div class="card-footer">
             <div>
               <h6>
-                ${HTML} ${product.rating.rate} (${product.rating.count})
+                ${star} ${product.rating.rate} (${product.rating.count})
               </h6>
             </div>
           </div>
@@ -54,6 +57,42 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+// Single Product Details Load from API:
+const singleProductDetails = (id) => {
+  fetch(`https://fakestoreapi.com/products/${id}`)
+    .then(res => res.json())
+    .then(data => singleProductShow(data))
+}
+
+// Display Single Product:
+const singleProductContainer = document.getElementById('single-product');
+const singleProductShow = (product) => {
+  singleProductContainer.textContent = '';
+  const image = product.image;
+  const description = (product.description).slice(0, 100);
+  const div = document.createElement('div');
+  div.innerHTML = `
+    <div class="card h-100 border border-dark">
+      <div class="d-flex justify-content-center bg-white">
+        <img src="${image}" class="product-image p-3" alt="...">
+      </div>
+      <div class="card-body" style="">
+        <div class="overflow-hidden" style="height: 40px">
+          <h6 class="card-title">${product.title}</h6>              
+        </div>
+        <p>Category: ${product.category}</p>
+        <h4 class="text-success">Price: $${product.price}</h4>
+        <p>${description}</p>
+        <div>
+                <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success"><i class="fas fa-cart-plus"></i> Add Cart</button>
+        </div>
+      </div>
+    </div>
+  `;
+  singleProductContainer.appendChild(div);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 // Add to Cart Setup:
 let count = 0;
@@ -115,8 +154,9 @@ const updateTotal = () => {
 
 // Buy Products Function:
 const buyProducts = () => {
-  const totalCost = updateTotal();
+  const totalCost = updateTotal().toFixed(2);
   document.getElementById("all-products").textContent = '';
+  singleProductContainer.textContent = '';
   document.getElementById("thank-you-container").textContent = '';
   const div = document.createElement("div");
   const img = '../images/smile-emoji.png';
