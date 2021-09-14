@@ -42,9 +42,9 @@ const showProducts = (products) => {
           </div>
           <div class="card-footer">
             <div>
-              <h5>
-                Average Rating: ${HTML} ${product.rating.rate} (${product.rating.count})
-              </h5>
+              <h6>
+                ${HTML} ${product.rating.rate} (${product.rating.count})
+              </h6>
             </div>
           </div>
         </div>
