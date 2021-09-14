@@ -33,6 +33,10 @@ body {
   height: 230px;
 }
 
+.card-bg {
+  background-image: linear-gradient(lightgray, rgb(58, 54, 54));
+}
+
 .star-color {
   color: rgb(255, 149, 41);
 }

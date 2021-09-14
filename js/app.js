@@ -24,8 +24,8 @@ const showProducts = (products) => {
 
     // Dynamically Set Every Products Cart
     div.innerHTML = `
-      <div class="col single-product">
-        <div class="card h-100 border border-dark">
+      <div class="col single-product text-white">
+        <div class="card h-100 border border-dark card-bg">
           <div class="d-flex justify-content-center bg-white">
             <img src="${image}" class="product-image p-3" alt="...">
           </div>
@@ -37,10 +37,10 @@ const showProducts = (products) => {
             <h4>Price: $${product.price}</h4>
             <div class="pt-2 d-flex">
               <div>
-                <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success"><i class="fas fa-cart-plus"></i> Add Cart</button>
+                <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn btn-outline-light"><i class="fas fa-cart-plus"></i> Add Cart</button>
               </div>
               <div class="ms-auto">
-                <button onclick="singleProductDetails(${product.id})" id="details-btn" class="btn btn-danger">Details</button>
+                <button onclick="singleProductDetails(${product.id})" id="details-btn" class="btn btn-outline-warning">Details</button>
               </div>
             </div>
           </div>
