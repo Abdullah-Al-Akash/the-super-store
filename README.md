@@ -1,5 +1,5 @@
 # Super-Store
-<h3>Live Site: https://the-super-store.netlify.app/</h3>
+<h3>Live Site: <a href="https://the-super-store.netlify.app/">The Super Store</a></h3>
 <h2>Hello!</h2>
 <h5>Today I have developed a website which's name is "Super Store".</h5>
 <h5>Actually there has some bugs issues which I have fixed and also I have improve thats total design which make website
